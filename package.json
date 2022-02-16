@@ -1,0 +1,70 @@
+{
+  "name": "@osspim/import-utilities",
+  "version": "0.71.2",
+  "main": "dist/index.js",
+  "author": "OSSPIM <hello@ossgroup.com>",
+  "contributors": [
+    "Brendan Goodenough <brendan@ossgroup.com>",
+    "Håkon Krogh <hakon@ossgroup.com>"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p . --declaration",
+    "test": "ava",
+    "dev:spec": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"node -r ts-node/register src/bootstrap-instance/__dev__create-spec.ts\"",
+    "dev:spec:inspect": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"node --inspect-brk -r ts-node/register src/bootstrap-instance/__dev__create-spec.ts\"",
+    "dev:bootstrapper": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"node -r ts-node/register src/bootstrap-instance/__dev__bootstrap.ts\"",
+    "dev:bootstrapper:inspect": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"node --inspect-brk -r ts-node/register src/bootstrap-instance/__dev__bootstrap.ts\"",
+    "generate-graphql-types": "graphql-codegen --require dotenv/config --config codegen.yml"
+  },
+  "dependencies": {
+    "@osspim/content-transformer": "^9.0.1",
+    "dotenv": "^10.0.0",
+    "download": "^8.0.0",
+    "duration": "^0.2.2",
+    "execa": "^5.1.1",
+    "file-type": "^16.5.0",
+    "form-data": "^4.0.0",
+    "graphql": "^15.5.3",
+    "immer": "^9.0.5",
+    "json-to-graphql-query": "^2.0.0",
+    "m3u8-to-mp4": "^1.0.0",
+    "node-fetch": "^2.6.1",
+    "slugify": "^1.5.3",
+    "uuid": "^8.3.2",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "@ava/typescript": "^1.1.1",
+    "@graphql-codegen/cli": "2.2.0",
+    "@graphql-codegen/introspection": "^2.1.0",
+    "@graphql-codegen/typescript": "2.2.2",
+    "@graphql-codegen/typescript-resolvers": "^2.2.1",
+    "@types/cli-progress": "^3.9.2",
+    "@types/download": "^8.0.0",
+    "@types/node": "^15.6.1",
+    "@types/node-fetch": "^2.5.10",
+    "@types/uuid": "^8.3.0",
+    "ava": "^3.15.0",
+    "cli-progress": "^3.9.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ossgroupp/import-utilities.git"
+  }
+}
